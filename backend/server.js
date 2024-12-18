@@ -22,4 +22,10 @@ mongoose
     console.error('Error connecting to MongoDB:', err.message);
     process.exit(1);
   });
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+// Use public IP of EC2 for binding
+const server = app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on http://${'51.20.135.111'}:${PORT}`);
+});
+
+module.exports = server; // Export the server instance for use in deployment
