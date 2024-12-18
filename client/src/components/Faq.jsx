@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { API_URL } from "./utiles/api";
 
 function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -13,7 +14,7 @@ function Faq() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/faq/topics");
+        const response = await fetch(`${API_URL}/api/faq/topics`);
         const data = await response.json();
         
         // Assuming the API returns topics inside a "topics" array
@@ -44,7 +45,7 @@ function Faq() {
         const topicId = categoryMap[selectedCategory]; // Get the topic_id for the selected category
 
         const response = await fetch(
-          `http://localhost:3000/api/faq/topics/questions`,
+          `${API_URL}/api/faq/topics/questions`,
           {
             method: "POST",
             headers: {

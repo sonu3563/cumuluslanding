@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import AsistanceRight from "../../src/Assets/asistance-right.png";
-
+import { API_URL } from "./utiles/api";
 function Assistance() {
     const [formData, setFormData] = useState({
         username: "",
@@ -33,7 +33,7 @@ function Assistance() {
         };
 
         try {
-            const response = await fetch("http://localhost:3000/api/queries", {
+            const response = await fetch(`${API_URL}/api/queries`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
