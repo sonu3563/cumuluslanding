@@ -6,7 +6,7 @@ import axios from "axios";
 function SubscriptionCard({ type, data, isActive, onHover }) {
   return (
     <div
-      className={`bg-white shadow-lg rounded-lg p-6 border-2 ${
+      className={`bg-white shadow-lg rounded-lg p-4 border-2 ${
         isActive ? "border-blue-500" : "border-transparent"
       } hover:border-blue-500 transition-all`}
       onMouseEnter={() => onHover(type)}
@@ -15,7 +15,7 @@ function SubscriptionCard({ type, data, isActive, onHover }) {
       <h2 className="text-xl font-semibold mb-4">
         {data.subscription_name}
         {data.recommended && (
-          <span className="bg-blue-500 text-white text-sm px-2 py-1 rounded-full ml-2">
+          <span className="bg-blue-500 text-white text-xs px-1 py-1 rounded-full ml-2">
             Recommended
           </span>
         )}

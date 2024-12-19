@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Users } from 'lucide-react';
 import profile1 from "../../src/Assets/profile1.jpeg"
 import profile2 from "../../src/Assets/profile2.jpeg"
 import profile3 from "../../src/Assets/profile3.jpeg"
+import frame from "../Assets/framebackground.png";
 const testimonials = {
     "Family Members": [
         {
@@ -96,93 +97,106 @@ function Testimonial() {
     };
 
     return (
-        <div className="w-full  mt-10 max-w-4xl mx-auto p-6 bg-gray-800 rounded-lg shadow-md  ">
-            <div className='flex justify-center'><span className='inline-flex justify-center p-3 bg-white rounded-2xl '>
-                <Users /> <span className='font-semibold'>Testimonial</span>
-            </span></div>
+        <>
+            <div className='w-full max-w-9xl bg-[#2E2E2E] py-4 ' 
+            style={{
+                backgroundImage: `url(${frame})`,
+                backgroundSize: "cover",
+                
+                backgroundPosition: "center",
+            }}
+            >
+                <div className="w-full   max-w-7xl mx-auto p-6  rounded-lg shadow-md   ">
+                    <div className='flex justify-center pb-4'><span className='inline-flex justify-center p-2 bg-white rounded-2xl '>
+                        <Users className="h-5" /> <span className='font-sm'>Testimonial</span>
+                    </span></div>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 mt-2 text-white">What Our Users Say</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 mt-2 text-white">What Our Users Say</h2>
 
-            {/* Tabs */}
-            <div className="flex justify-center space-x-4  md:mb-6">
-                {Object.keys(testimonials).map((category) => (
-                    <button
-                        key={category}
-                        className={`px-4 py-2 rounded ${activeCategory === category
-                            ? "bg-blue-500 text-white"
-                            : "bg-gray-200 text-gray-700"
-                            } `}
-                        onClick={() => {
-                            setActiveCategory(category);
-                            setCurrentIndex(0);
-                        }}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </div>
+                    {/* Tabs */}
+                    <div className="flex justify-center space-x-4  md:mb-6">
+                        {Object.keys(testimonials).map((category) => (
+                            <button
+                                key={category}
+                                className={`px-4 py-2 rounded ${activeCategory === category
+                                    ? "bg-blue-500 text-white"
+                                    : "bg-gray-200 text-gray-700"
+                                    } `}
+                                onClick={() => {
+                                    setActiveCategory(category);
+                                    setCurrentIndex(0);
+                                }}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
 
-            {/* Review Slider */}
-            <div className="flex items-center justify-center">
+                    {/* Review Slider */}
+                    <div className="flex items-center justify-center">
 
 
-                <div className="flex flex-col items-center text-center mx-4 p-6 rounded-lg">
+                        <div className="flex flex-col items-center text-center mx-4 p-6 rounded-lg">
 
-                    <AnimatePresence mode='wait'>
-                        <motion.div
-                            key={currentIndex}
-                            // initial={{ opacity: 0, x: 50 }}
-                            // animate={{ opacity: 1, x: 0 }}
-                            // exit={{ opacity: 0, x: -50 }}
-                            // transition={{ duration: 0.5 }}
-                            
+                            <AnimatePresence mode='wait'>
+                                <motion.div
+                                    key={currentIndex}
+                                    // initial={{ opacity: 0, x: 50 }}
+                                    // animate={{ opacity: 1, x: 0 }}
+                                    // exit={{ opacity: 0, x: -50 }}
+                                    // transition={{ duration: 0.5 }}
 
-                            initial={{ opacity: 0, x: 0, scale: 0.7 }} 
-                            animate={{ opacity: 1, x: 0, scale: 1 }} 
-                            exit={{ opacity: 0, x: -20, scale: 0.5 }} 
-                            transition={{ duration: 0.5, ease: "easeInOut" }} 
+
+                                    initial={{ opacity: 0, x: 0, scale: 0.7 }}
+                                    animate={{ opacity: 1, x: 0, scale: 1 }}
+                                    exit={{ opacity: 0, x: -20, scale: 0.5 }}
+                                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                                >
+                                    <p className="text-white  font-serif mb-4 ">
+                                        {testimonials[activeCategory][currentIndex].review}
+                                    </p>
+                                    <div className='inline-flex p-2 pb-1 px-8 rounded-xl mt-4 justify-center bg-gray-700 items-center'>
+                                        <img
+                                            src={testimonials[activeCategory][currentIndex].image}
+                                            alt={testimonials[activeCategory][currentIndex].name}
+                                            className="w-16 h-16 rounded-full  bg-slate-500 object-cover "
+                                        />
+                                        <div className='ml-1 items-centr'>
+
+                                            <p className="text-white font-semibold">
+                                                {testimonials[activeCategory][currentIndex].name}
+                                            </p>
+                                            <p className="text-white ml-2 text-sm">
+                                                {testimonials[activeCategory][currentIndex].role}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                    </div>
+
+                    <div className='flex justify-between md:justify-around'>
+                        <button
+                            className="text-white"
+                            onClick={handlePrev}
                         >
-                            <p className="text-white  font-serif mb-4 ">
-                                {testimonials[activeCategory][currentIndex].review}
-                            </p>
-                            <div className='inline-flex p-2 pb-1 px-8 rounded-xl mt-4 justify-center bg-gray-700 items-center'>
-                                <img
-                                    src={testimonials[activeCategory][currentIndex].image}
-                                    alt={testimonials[activeCategory][currentIndex].name}
-                                    className="w-16 h-16 rounded-full  bg-slate-500 object-cover "
-                                />
-                                <div className='ml-1 items-centr'>
+                            <ChevronLeft size={32} />
+                        </button>
 
-                                    <p className="text-white font-semibold">
-                                        {testimonials[activeCategory][currentIndex].name}
-                                    </p>
-                                    <p className="text-white ml-2 text-sm">
-                                        {testimonials[activeCategory][currentIndex].role}
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
+                        <button
+                            className="text-white"
+                            onClick={handleNext}
+                        >
+                            <ChevronRight size={32} />
+                        </button>
+                    </div>
                 </div>
-
             </div>
 
-            <div className='flex justify-around'>
-                <button
-                    className="text-white"
-                    onClick={handlePrev}
-                >
-                    <ChevronLeft size={32} />
-                </button>
+        </>
 
-                <button
-                    className="text-white"
-                    onClick={handleNext}
-                >
-                    <ChevronRight size={32} />
-                </button>
-            </div>
-        </div>
     );
 }
 

@@ -7,18 +7,18 @@ import Faq from './components/Faq';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Work from './components/Work';
+import Benifit from './components/Benifit';
 
 function App() {
   return (
-    <>
+    //  <Subscription/>
+    // <Testimonial/>
+    // <Assistance/>
+    // <Faq/>
+    // <Footer/>
     <Hero />
-    <Work/>
-    <Subscription/>
-    <Testimonial/>
-    <Faq/>
-    <Assistance/>
-    <Footer/>
-    </>
+    // <Work/>
+    // <Benifit/>
   )
 }
 
