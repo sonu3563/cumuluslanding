@@ -3,7 +3,7 @@ import { Menu, MousePointerClickIcon, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../Assets/logo.png";
-import bgimage from "../Assets/Bg-hero.jpg";
+import bgimage from "../Assets/desktopbg2.png";
 import heroimage from "../Assets/heroimg.png";
 import Box1 from "../Assets/Box1.png";
 import Box2 from "../Assets/Box2.png";
@@ -33,14 +33,152 @@ function Hero() {
   return (
     <>
       {/* Background Section */}
-      <div
-        id="home"
-        className="font-sans relative  h-[80vh]  lg:h-auto  "
+      <nav className="fixed top-0 left-0 w-full text-white shadow z-50 bg-[#2e2e2e]">
+        <div className=" w-full mx-auto px-4 py-3 flex justify-between md:justify-around items-center">
+          {/* Logo */}
+          <div>
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={500}
+              offset={0}
+              className=" cursor-pointer text-lg"
+            >
+              <img src={logo} alt="Logo" className="h-10" />
+            </ScrollLink>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            <ScrollLink
+              to="features"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="hover:underline cursor-pointer text-lg"
+            >
+              Features
+            </ScrollLink>
+            <ScrollLink
+              to="work"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="hover:underline cursor-pointer text-lg"
+            >
+              How it Work
+            </ScrollLink>
+            <ScrollLink
+              to="testimonial"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="hover:underline cursor-pointer text-lg"
+            >
+              Testimonial
+            </ScrollLink>
+            <ScrollLink
+              to="subscription"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="hover:underline cursor-pointer text-lg"
+            >
+              Plans & Pricing
+            </ScrollLink>
+            <Link
+              to="asistance"
+              className="cursor-pointer text-lg p-1 px-2 border text-blue-600 bg-white rounded-lg hover:font-semibold"
+            >
+              Get Started
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-8 h-8" />
+            ) : (
+              <Menu className="w-8 h-8" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={menuVariants}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="sm:hidden bg-[#2e2e2e] text-white space-y-1 overflow-hidden"
+            >
+              <ScrollLink
+                to="features"
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className="hover:bg-gray-700 cursor-pointer block px-4 py-2"
+              >
+                Features
+              </ScrollLink>
+              <ScrollLink
+                to="work"
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                How it Work
+              </ScrollLink>
+              <ScrollLink
+                to="testimonial"
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Testimonial
+              </ScrollLink>
+              <ScrollLink
+                to="subscription"
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Plans & Pricing
+              </ScrollLink>
+              <div className="flex items-end p-2">
+                <Link
+                  to="assistance"
+                  className="w-full text-center text-xl py-2 px-4 border text-blue-600 bg-white rounded-lg hover:font-semibold"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+
+
+
+      <div id="home" className="font-sans    "
         style={{
           backgroundImage: `url(${bgimage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          borderradius: "0% 0% 35% 35%",
           // borderBottomLeftRadius: "30%",
           // borderBottomRightRadius: "30%",
 
@@ -49,146 +187,11 @@ function Hero() {
         }}
       >
         {/* Navbar */}
-        <nav className="fixed top-0 left-0 w-full text-white shadow z-50 bg-[#2e2e2e]">
-          <div className=" w-full mx-auto px-4 py-3 flex justify-between md:justify-around items-center">
-            {/* Logo */}
-            <div>
-              <ScrollLink
-                to="home"
-                smooth={true}
-                duration={500}
-                offset={0}
-                className=" cursor-pointer text-lg"
-              >
-                <img src={logo} alt="Logo" className="h-10" />
-              </ScrollLink>
-            </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <ScrollLink
-                to="features"
-                smooth={true}
-                duration={500}
-                offset={-50}
-                className="hover:underline cursor-pointer text-lg"
-              >
-                Features
-              </ScrollLink>
-              <ScrollLink
-                to="work"
-                smooth={true}
-                duration={500}
-                offset={-50}
-                className="hover:underline cursor-pointer text-lg"
-              >
-                How it Work
-              </ScrollLink>
-              <ScrollLink
-                to="testimonial"
-                smooth={true}
-                duration={500}
-                offset={-50}
-                className="hover:underline cursor-pointer text-lg"
-              >
-                Testimonial
-              </ScrollLink>
-              <ScrollLink
-                to="subscription"
-                smooth={true}
-                duration={500}
-                offset={-50}
-                className="hover:underline cursor-pointer text-lg"
-              >
-                Plans & Pricing
-              </ScrollLink>
-              <Link
-                to="pricing"
-                className="cursor-pointer text-lg p-1 px-2 border text-blue-600 bg-white rounded-lg hover:font-semibold"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-8 h-8" />
-              ) : (
-                <Menu className="w-8 h-8" />
-              )}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          <AnimatePresence>
-            {isMobileMenuOpen && (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                variants={menuVariants}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="sm:hidden bg-[#2e2e2e] text-white space-y-1 overflow-hidden"
-              >
-                <ScrollLink
-                  to="features"
-                  smooth={true}
-                  duration={900}
-                  offset={-50}
-                  className="hover:bg-gray-700 cursor-pointer block px-4 py-2"
-                >
-                  Features
-                </ScrollLink>
-                <ScrollLink
-                  to="work"
-                  smooth={true}
-                  duration={900}
-                  offset={-50}
-                  className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  How it Work
-                </ScrollLink>
-                <ScrollLink
-                  to="testimonial"
-                  smooth={true}
-                  duration={900}
-                  offset={-50}
-                  className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Testimonial
-                </ScrollLink>
-                <ScrollLink
-                  to="subscription"
-                  smooth={true}
-                  duration={900}
-                  offset={-50}
-                  className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Plans & Pricing
-                </ScrollLink>
-                <div className="flex items-end p-2">
-                  <Link
-                    to="pricing"
-                    className="w-full text-center text-xl py-2 px-4 border text-blue-600 bg-white rounded-lg hover:font-semibold"
-                  >
-                    Get Started
-                  </Link>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </nav>
 
         {/* Hero Section */}
-        <div className="h-screen">
-          <header className="relative  text-white h-screen flex flex-col justify-center items-center text-center font-serif z-10 ">
+        <div className=" py-[14%] z-0">
+          <header className="  text-white  flex flex-col justify-center items-center text-center font-serif ">
             <h1 className="text-2xl  md:text-5xl font-bold mb-4 md:w-[80%] p-1 flex items-start justify-center">
               The Secure Digital Vault for Your Life and Beyond
             </h1>
@@ -197,7 +200,7 @@ function Hero() {
               nominees.
             </p>
             <div className="flex space-x-4 justify-center">
-              <button className="bg-transparent border px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-500 font-sans">
+              <button className="bg-transparent border px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
                 Learn More
               </button>
               <button className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
@@ -207,21 +210,26 @@ function Hero() {
           </header>
 
           {/* desktop image */}
-          <div className="relative flex items-center justify-center w-full bottom-64  sm:bottom-64 md:-top-96 lg:-top-72 md:h-screen z-30">
-            <img
-              src={heroimage}
-              alt="heroimage"
-              className="h-full w-[90%] object-contain mx-auto"
-            />
 
-            {/* Bottom-to-top gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F5] via-[#F5F5F5]/50 to-transparent blur-sm pointer-events-none "></div>
-          </div>
         </div>
+
+
+
       </div>
-      <div className="h-[28vh] sm:h-[40vh] md:h-[70vh] lg:h-[70vh] bg-[#f5f5f5]"></div>
+      {/* <div className="h-[28vh] sm:h-[40vh] md:h-[70vh]  lg:h-[110vh]  bg-[#f5f5f5] z-20"></div> */}
       {/* Features Section */}
-      <div className="flex flex-col justify-center items-center text-center bg-[#F5F5F5] pt-4 z-40 ">
+
+      <div className="relative flex items-center justify-center w-full -mt-[3rem] sm:-mt-[4rem] md:-mt-[5rem] lg:-mt-[12rem] z-30">
+        <img
+          src={heroimage}
+          alt="heroimage"
+          className="h-full w-[90%] object-contain mx-auto"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F5] via-[#F5F5F5]/50  md:via-[#F5F5F5]/80 to-transparent blur-sm pointer-events-none"></div>
+      </div>
+
+
+      <div className="relative flex flex-col justify-center items-center -mt-[5rem] sm:-mt-[6rem] md:-mt[15rem] lg:-mt-[18rem] text-center bg-[#F5F5F5] pt-4 z-50 ">
         <div className="flex bg-blue-200 p-1 text-blue-700 px-2 rounded-lg gap-x-1">
           <MousePointerClickIcon /> Cumulus's Features
         </div>
@@ -280,13 +288,15 @@ function Hero() {
         </div>
       </div>
 
+
+
       <div id="subscription">
         <Subscription />
       </div>
       <div id="benifit">
         <Benifit />
       </div>
-      <div id="work ">
+      <div id="work">
         <Work />
       </div>
 

@@ -53,7 +53,7 @@ const Work = () => {
                         <div className=" max-w-7xl text-center md:text-left sm:w-[35vw]">
                             <h2 className="text-2xl font-bold mb-4">{activeContent.heading}</h2>
                             <p className="text-gray-600 mb-6 ">{activeContent.text}</p>
-                            <button className="px-3 py-2 mb-4 md:mb-0 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 flex justify-between items-center">
+                            <button className="px-3 py-2 mb-4 md:mb-0 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 flex justify-center md:justify-between items-center">
                                 {activeContent.button}
 
                                 <ChevronRight className='h-5' />
