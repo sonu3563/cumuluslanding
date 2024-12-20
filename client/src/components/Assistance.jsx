@@ -243,7 +243,7 @@ function Assistance() {
                     }}
             >
                 {/* Left Form Section */}
-                <div className="w-full max-w-lg px-6 py-12 md:p-8 lg:p-0  md:w-1/2">
+                <div className="w-full max-w-lg px-6 py-12 md:p-8 lg:p-10  md:w-1/2">
                     <h1 className="text-2xl font-bold mb-4">Need Assistance? Let's Connect!</h1>
                     <p className="text-gray-400 mb-6">
                         Use the form below or email us at <a href="mailto:support@cumulus.com" className="text-blue-500">support@cumulus.com</a> for any inquiries.
@@ -312,7 +312,7 @@ function Assistance() {
                 </div>
 
                 {/* Right Image Section */}
-                <div className=" md:w-[50%] lg:w-1/2 relative">
+                <div className=" md:w-[50%] md:w-1/2 relative">
                     <div className="relative w-full hidden md:flex items-end bg-gradient-to-br from-transparent via-transparent to-blue-900">
                         <img
                             src={AsistanceRight}
