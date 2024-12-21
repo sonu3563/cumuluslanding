@@ -172,7 +172,7 @@ function Hero() {
 
 
 
-      <div id="home" className="font-sans    "
+      <div id="home" className="font-sans "
         style={{
           backgroundImage: `url(${bgimage})`,
           backgroundSize: "cover",
@@ -190,9 +190,9 @@ function Hero() {
 
 
         {/* Hero Section */}
-        <div className=" py-[14%] z-0">
+        <div className=" py-[28%]  lg:py-[14%] z-0">
           <header className="  text-white  flex flex-col justify-center items-center text-center font-serif ">
-            <h1 className="text-2xl  md:text-5xl font-bold mb-4 md:w-[80%] p-1 flex items-start justify-center">
+            <h1 className="text-2xl  md:text-5xl font-bold mb-4 md:w-[80%] p-1 flex items-center justify-center">
               The Secure Digital Vault for Your Life and Beyond
             </h1>
             <p className="text-lg md:text-xl mb-6 flex justify-center">
@@ -229,7 +229,7 @@ function Hero() {
       </div>
 
 
-      <div className="relative flex flex-col justify-center items-center -mt-[5rem] sm:-mt-[6rem] md:-mt[15rem] lg:-mt-[18rem] text-center bg-[#F5F5F5] pt-4 z-50 ">
+      <div className="relative flex flex-col justify-center items-center -mt-[5rem] sm:-mt-[6rem] md:-mt[15rem] lg:-mt-[18rem] text-center bg-[#F5F5F5] pt-4 z-30 ">
         <div className="flex bg-blue-200 p-1 text-blue-700 px-2 rounded-lg gap-x-1">
           <MousePointerClickIcon /> Cumulus's Features
         </div>
