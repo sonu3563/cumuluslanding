@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import AsistanceRight from "../../src/Assets/asistance-right.png";
-import frameasistance from "../Assets/frameasistance.png";
+import frameasistance from "../Assets/frameassistance.png";
 import frame3 from "../Assets/frame3.png";
 import { API_URL } from "./utiles/api";
 import useLoadingStore from "../store/UseLoadingStore";
-import { ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight ,Loader2 } from "lucide-react";
 
 function Assistance() {
   const { isLoading, showLoading, hideLoading } = useLoadingStore();
@@ -17,14 +17,7 @@ function Assistance() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false); // Track submission status
   const [backgroundImage, setBackgroundImage] = useState(frameasistance); // Default background
-  const isFormValid = () => {
-    return (
-      formData.username &&
-      formData.email &&
-      formData.selectQuery &&
-      formData.describeQuery
-    );
-  };
+
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,14 +26,17 @@ function Assistance() {
       [name]: value,
     }));
   };
-
+  const isFormValid = () => {
+    return (
+      formData.username &&
+      formData.email &&
+      formData.selectQuery &&
+      formData.describeQuery
+    );
+  };
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isFormValid()) {
-      alert("Please fill out all the required fields.");
-      return;
-    }
     showLoading();
     const requestBody = {
       username: formData.username,
@@ -97,18 +93,18 @@ function Assistance() {
   }, []);
 
   return (
-    <div className="p-1 sm:p-8 md:p-10 lg:p-16 rounded-md 2xl:h-full">
+    <div className="p- sm:pl-0 md:p-10 lg:py-24 lg:px-2 2xl:p-32 rounded-md ">
       <div
-        className="text-white flex flex-row items-center justify-between rounded-xl overflow-hidden"
+        className="text-white  flex flex-row items-center justify-center md:justify-center lg:justify-between  overflow-hidden 2xl:min-h-[75vh]"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         {/* Left Form Section */}
-        <div className="md:pl-20 md:pr-6 px-5 py-20 lg:w-1/2 flex">
+        <div className=" px-5 md:px-10 lg:px-20  py-20 lg:w-1/2 flex justify-center  ">
           <div>
             <h1 className="text-2xl md:text-4xl font-bold mb-4 p-1">Need Assistance? Let's Connect!</h1>
             <p className="text-gray-400 mb-6">
@@ -122,10 +118,9 @@ function Assistance() {
             <div>
   <input
     type="text"
-    required
     name="username"
     placeholder="Enter your name"
-    className="w-full p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
+    className="w-full mb-2 p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
     onChange={handleInputChange}
     value={formData.username}
   />
@@ -134,9 +129,8 @@ function Assistance() {
                 <input
                   type="email"
                   name="email"
-                  required
                   placeholder="Enter your email"
-                  className="w-full p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
+                  className="w-full mb-2 p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
                   onChange={handleInputChange}
                   value={formData.email}
                 />
@@ -144,7 +138,7 @@ function Assistance() {
               <div className="relative">
                 <select
                   name="selectQuery"
-                  className="w-full p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
+                  className="w-full mb-2 p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
                   onChange={handleInputChange}
                   value={formData.selectQuery}
                 >
@@ -158,9 +152,8 @@ function Assistance() {
                 <textarea
                   name="describeQuery"
                   rows="4"
-                  required
                   placeholder="Describe your query"
-                  className= "w-full p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
+                  className= "w-full mb-2 p-4 rounded-lg bg-[#585858]/40 border border-gray-500 text-white placeholder-white focus:outline-none focus:ring-1 focus:ring-white backdrop-blur-sm"
                   onChange={handleInputChange}
                   value={formData.describeQuery}
                 ></textarea>
@@ -191,8 +184,6 @@ function Assistance() {
                   <ChevronRight />
                 </button>
               )}
-
-
             </form>
           </div>
         </div>

@@ -34,7 +34,7 @@ function Hero() {
     <>
       {/* Background Section */}
       <nav className="fixed top-0 left-0 w-full text-white shadow z-50 bg-[#2e2e2e]">
-        <div className=" w-full mx-auto px-4 py-3 flex justify-between md:justify-around items-center">
+        <div className=" w-full mx-auto md:px-1 py-3 flex px-1 sm:px-2 lg:px-10 justify-between md:justify-between lg:justify-between  items-center">
           {/* Logo */}
           <div>
             <ScrollLink
@@ -49,7 +49,7 @@ function Hero() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex md:space-x-3 lg:space-x-8">
             <ScrollLink
               to="features"
               smooth={true}
@@ -66,7 +66,7 @@ function Hero() {
               offset={-50}
               className="hover:underline cursor-pointer text-lg"
             >
-              How it Work
+              How it Works
             </ScrollLink>
             <ScrollLink
               to="testimonial"
@@ -75,7 +75,7 @@ function Hero() {
               offset={-50}
               className="hover:underline cursor-pointer text-lg"
             >
-              Testimonial
+              Testimonials
             </ScrollLink>
             <ScrollLink
               to="subscription"
@@ -135,7 +135,7 @@ function Hero() {
                 className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                How it Work
+                How it Works
               </ScrollLink>
               <ScrollLink
                 to="testimonial"
@@ -145,7 +145,7 @@ function Hero() {
                 className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Testimonial
+                Testimonials
               </ScrollLink>
               <ScrollLink
                 to="subscription"
@@ -172,13 +172,13 @@ function Hero() {
 
 
 
-      <div id="home" className="font-sans "
+      <div id="home" className="font-sans  min-w-screen"
         style={{
           backgroundImage: `url(${bgimage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          borderradius: "0% 0% 35% 35%",
+          //borderradius: "0% 0% 100% 100%",
           // borderBottomLeftRadius: "30%",
           // borderBottomRightRadius: "30%",
 
@@ -190,7 +190,7 @@ function Hero() {
 
 
         {/* Hero Section */}
-        <div className=" py-[28%]  lg:py-[14%] z-0">
+        <div className=" py-[28%]  lg:py-[14%] xl:py-[20%] z-0">
           <header className="  text-white  flex flex-col justify-center items-center text-center font-serif ">
             <h1 className="text-2xl  md:text-5xl font-bold mb-4 md:w-[80%] p-1 flex items-center justify-center">
               The Secure Digital Vault for Your Life and Beyond
@@ -223,13 +223,13 @@ function Hero() {
         <img
           src={heroimage}
           alt="heroimage"
-          className="h-full w-[90%] object-contain mx-auto"
+          className="h-full min-w-[100%] object-contain mx-auto"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F5] via-[#F5F5F5]/50  md:via-[#F5F5F5]/80 to-transparent blur-sm pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5F5] via-[#F5F5F5]/50  md:via-[#F5F5F5]/50 to-transparent blur-sm pointer-events-none"></div>
       </div>
 
 
-      <div className="relative flex flex-col justify-center items-center -mt-[5rem] sm:-mt-[6rem] md:-mt[15rem] lg:-mt-[18rem] text-center bg-[#F5F5F5] pt-4 z-30 ">
+      <div id="features" className="relative flex flex-col justify-center items-center -mt-[5rem] sm:-mt-[6rem] md:-mt[15rem] lg:-mt-[18rem] text-center bg-[#F5F5F5] pt-4 z-30 ">
         <div className="flex bg-blue-200 p-1 text-blue-700 px-2 rounded-lg gap-x-1">
           <MousePointerClickIcon /> Cumulus's Features
         </div>

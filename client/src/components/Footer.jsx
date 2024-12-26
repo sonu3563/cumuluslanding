@@ -8,19 +8,16 @@ function Footer() {
     <footer className="bg-gray-100 py-10 ">
       <div className="max-w-7xl mx-auto px-6 ">
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8  ">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 ">
-          {/* Logo and Social Links */}
-          {/* Logo and Social Links */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-start ">
             {/* Logo */}
             <h1 className="flex item-start">
               <span><img src={logo2} alt="" className='h-12' /></span>
             </h1>
 
-            {/* Follow Us and Social Icons in one line */}
             <div className="flex items-center space-x-4 mt-4">
-              {/* <p className="text-gray-600">Follow Us</p> */}
+          
               <div className="flex space-x-4">
                 <Link to="#" className="text-gray-600 hover:text-blue-500">
                   <Facebook className="w-5 h-5" />
