@@ -60,6 +60,15 @@ function Hero() {
               Features
             </ScrollLink>
             <ScrollLink
+              to="subscription"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              className="hover:underline cursor-pointer text-lg"
+            >
+              Plans & Pricing
+            </ScrollLink>
+            <ScrollLink
               to="work"
               smooth={true}
               duration={500}
@@ -77,21 +86,16 @@ function Hero() {
             >
               Testimonials
             </ScrollLink>
+
             <ScrollLink
               to="subscription"
+              className="cursor-pointer text-lg p-1 px-2 border text-blue-600 bg-white rounded-lg hover:font-semibold"
               smooth={true}
               duration={500}
               offset={-50}
-              className="hover:underline cursor-pointer text-lg"
-            >
-              Plans & Pricing
-            </ScrollLink>
-            <Link
-              to="asistance"
-              className="cursor-pointer text-lg p-1 px-2 border text-blue-600 bg-white rounded-lg hover:font-semibold"
             >
               Get Started
-            </Link>
+            </ScrollLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,6 +132,16 @@ function Hero() {
                 Features
               </ScrollLink>
               <ScrollLink
+                to="subscription"
+                smooth={true}
+                duration={900}
+                offset={-50}
+                className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Plans & Pricing
+              </ScrollLink>
+              <ScrollLink
                 to="work"
                 smooth={true}
                 duration={900}
@@ -147,23 +161,17 @@ function Hero() {
               >
                 Testimonials
               </ScrollLink>
-              <ScrollLink
-                to="subscription"
-                smooth={true}
-                duration={900}
-                offset={-50}
-                className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Plans & Pricing
-              </ScrollLink>
+
               <div className="flex items-end p-2">
-                <Link
-                  to="assistance"
+                <ScrollLink
+                  to="subscription"
                   className="w-full text-center text-xl py-2 px-4 border text-blue-600 bg-white rounded-lg hover:font-semibold"
+                  smooth={true}
+                  duration={500}
+                  offset={-50}
                 >
                   Get Started
-                </Link>
+                </ScrollLink>
               </div>
             </motion.div>
           )}
@@ -203,9 +211,18 @@ function Hero() {
               <button className="bg-transparent border px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
                 Learn More
               </button>
-              <button className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
+            <ScrollLink
+            to="subscription"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            >
+
+            <button className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
                 Sign Up Now
               </button>
+            </ScrollLink>
+             
             </div>
           </header>
 
