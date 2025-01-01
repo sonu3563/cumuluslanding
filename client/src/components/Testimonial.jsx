@@ -9,22 +9,22 @@ const testimonials = {
     "Family Members": [
         {
             id: 1,
-            name: "Payal",
-            role: "Housewife",
+            name: "Joseph",
+            role: "Brother",
             image: profile1, // Replace with the actual image path
             review: "This platform gave me peace of mind knowing my kids will have everything they need when I’m no longer around. Assigning documents was simple, and the interface is so user-friendly. It's a gift of security",
         },
         {
             id: 2,
             name: "Sarah khan",
-            role: "Teacher",
+            role: "Sister",
             image: profile2, // Replace with the actual image path
             review: "I can’t thank this platform enough for giving me peace of mind. It’s user-friendly, secure, and the perfect way to ensure my kids have what they need even if I’m not around.",
         },
         {
             id: 3,
-            name: "Sarah oberoi",
-            role: "housewife",
+            name: "John",
+            role: "Brother",
             image: profile3, // Replace with the actual image path
             review: "The platform’s simplicity and efficiency are unmatched. I was able to assign important documents to my family in just a few clicks. Now, I feel relieved knowing everything is in place for my loved ones.",
         },
@@ -33,21 +33,21 @@ const testimonials = {
     "Business Owners": [
         {
             id: 1,
-            name: "John A",
+            name: "Julie ",
             role: "Small Business Owner",
             image: profile2,
             review: "This platform streamlined my business planning and helped me secure my documents efficiently. Highly recommended!",
         },
         {
             id: 2,
-            name: "John Aaa",
+            name: "Johnny ",
             role: "large Business Owner",
             image: profile1,
             review: "As a startup owner, efficiency is everything. This platform simplified my document organization and gave me peace of mind knowing everything is securely stored. Highly recommend it!",
         },
         {
             id: 3,
-            name: "John Aaaaa",
+            name: "James",
             role: "extralarge Business Owner",
             image: profile3,
             review: "Managing my business documents has never been this easy. This platform’s intuitive design and secure features have saved me countless hours of work. Absolutely love it!",
@@ -57,22 +57,22 @@ const testimonials = {
     "Working Professionals": [
         {
             id: 1,
-            name: "Emily R",
+            name: "William",
             role: "Marketing",
             image: profile3,
             review: "Assadf a working professional,  Lorem ipsum dolor sit amet.I needed a tool to manage my documents seamlessly. This platform has been a lifesaver!",
         },
         {
             id: 2,
-            name: "Emily Rrr",
-            role: "frontend",
+            name: "Hanry",
+            role: "Developer",
             image: profile1,
             review: "As ,mnjhga working professional, I needed a tool to manage my documents seamlessly  This platform has been a lifesaver!",
         },
         {
             id: 3,
-            name: "Emily Rrrrrr",
-            role: "backend",
+            name: "Olivia ",
+            role: "Teacher",
             image: profile2,
             review: " I needed a tool to manage my documents seamlessly. This platform has been a lifesaver! needed a tool to manage my documents seamlessly",
         },

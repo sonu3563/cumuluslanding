@@ -3,15 +3,20 @@ import { Upload, UserPlus, Users, Share2, BadgeCheckIcon, ChevronRight } from 'l
 import worksimg from "../Assets/work.png"
 import asistance from "../Assets/asistance-right.png"
 import nominee from "../Assets/Nominee.png"
+import signup from "../Assets/Signup.png"
+import upload from "../Assets/Upload.png"
+import nominees from "../Assets/Nominees.png"
+import transfer from "../Assets/Transfer.png"
+import { Link as ScrollLink } from "react-scroll";
 
 const Work = () => {
     const [activeTab, setActiveTab] = useState('upload');
 
     const tabs = [
-        { id: 'signup', label: 'Sign Up', icon: <UserPlus />, content: { heading: 'Join Us Today!', text: 'Create your account to start. Create your account to start.Create your account to start.Create your account to start.Create your account to start.Create your account to start.', button: 'Get Started', image: nominee } },
-        { id: 'upload', label: 'Upload Document', icon: <Upload />, content: { heading: 'Upload Files Securely', text: 'Upload your important documents Upload your important documentsUpload your important documentsUpload your important documentsUpload your important documentsUpload your important documentsUpload your important documents.', button: 'Upload Now', image: nominee } },
-        { id: 'nominee', label: 'Assign Nominee', icon: <Users />, content: { heading: 'Assign Nominees', text: 'Manage your account nominees.Manage your account nomineesManage your account nomineesManage your account nomineesManage your account nomineesManage your account nomineesManage your account nomineesManage your account nominees', button: 'Assign Now', image: nominee } },
-        { id: 'transfer', label: 'Transfer Access', icon: <Share2 />, content: { heading: 'Transfer Account Access', text: 'Easily transfer access rights.', button: 'Transfer Now', image: nominee } },
+        { id: 'signup', label: 'Sign Up', icon: <UserPlus />, content: { heading: 'Sign Up', to:'subscription',  text: 'Securely store and share your family documents with your chosen nominees. Securely store and share your family documents with your chosen nominees.', button: 'Get Started', image: signup } },
+        { id: 'upload', label: 'Upload Document', icon: <Upload />, content: { heading: 'Upload Document', to:'subscription', text: 'Securely store and share your family documents with your chosen nominees. Securely store and share your family documents with your chosen nominees', button: 'Get Started', image: upload } },
+        { id: 'nominee',  label: 'Assign Nominee', icon: <Users />, content: { heading: 'Assign Nominees', to:'subscription', text: 'Securely store and share your family documents with your chosen nominees. Securely store and share your family documents with your chosen nominees.', button: 'Get Started', image: nominees } },
+        { id: 'transfer',  label: 'Transfer Access', icon: <Share2 />, content: { heading: 'Transfer Access',to:'subscription', text: 'Securely store and share your family documents with your chosen nominees. Securely store and share your family documents with your chosen nominees.', button: 'Get Started', image: transfer } },
     ];
 
     const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
@@ -53,11 +58,18 @@ const Work = () => {
                         <div className=" max-w-7xl text-center md:text-left sm:w-[35vw]">
                             <h2 className="text-2xl font-bold mb-4">{activeContent.heading}</h2>
                             <p className="text-gray-600 mb-6 ">{activeContent.text}</p>
+                             <ScrollLink
+                                to={activeContent.to} // Target the "to" property dynamically
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                            >
                             <button className="px-3 py-2 mb-4 md:mb-0 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 flex justify-center md:justify-between items-center">
                                 {activeContent.button}
-
+                                    
                                 <ChevronRight className='h-5' />
                             </button>
+                            </ScrollLink>
                         </div>
                         {/* Right Content */}
                         <div className=''>
@@ -65,7 +77,7 @@ const Work = () => {
                                 <img
                                     src={activeContent.image}
                                     alt={activeContent.heading}
-                                    className="rounded-lg shadow-lg object-contain h-40 md:h-52 lg:h-80 w-full"
+                                    className="rounded-lg shadow-lg object-fit h-40 md:h-52 lg:h-80 w-full"
                                 />
                             </div>
 

@@ -9,6 +9,7 @@ import Box1 from "../Assets/Box1.png";
 import Box2 from "../Assets/Box2.png";
 import Box3 from "../Assets/Box3.png";
 import Box4 from "../Assets/Box4.png";
+import reviews from "../Assets/Reviews.png"
 import Subscription from "./Subscription";
 import Work from "./Work";
 import Testimonial from "./Testimonial";
@@ -17,6 +18,7 @@ import Assistance from "./Assistance";
 import Footer from "./Footer";
 import Benifit from "./Benifit";
 import { Link as ScrollLink } from "react-scroll";
+
 
 function Hero() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,7 +68,7 @@ function Hero() {
               offset={-50}
               className="hover:underline cursor-pointer text-lg"
             >
-              Plans & Pricing
+            Pricing
             </ScrollLink>
             <ScrollLink
               to="work"
@@ -139,7 +141,7 @@ function Hero() {
                 className="block px-4 py-2 hover:bg-gray-700 cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Plans & Pricing
+                Pricing
               </ScrollLink>
               <ScrollLink
                 to="work"
@@ -180,7 +182,7 @@ function Hero() {
 
 
 
-      <div id="home" className="font-sans  min-w-screen"
+      <div id="home" className="font-sans  min-w-screen pt-20"
         style={{
           backgroundImage: `url(${bgimage})`,
           backgroundSize: "cover",
@@ -198,8 +200,15 @@ function Hero() {
 
 
         {/* Hero Section */}
+        
+
+
         <div className=" py-[28%]  lg:py-[14%] xl:py-[20%] z-0">
+        <div className="h-12 w-full flex justify-center items-center mb-10">
+        <div className="h-12 w-48">
+          <img src={reviews} /></div></div>
           <header className="  text-white  flex flex-col justify-center items-center text-center font-serif ">
+            
             <h1 className="text-2xl  md:text-5xl font-bold mb-4 md:w-[80%] p-1 flex items-center justify-center">
               The Secure Digital Vault for Your Life and Beyond
             </h1>
@@ -208,9 +217,7 @@ function Hero() {
               nominees.
             </p>
             <div className="flex space-x-4 justify-center">
-              <button className="bg-transparent border px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
-                Learn More
-              </button>
+              
             <ScrollLink
             to="subscription"
             smooth={true}
@@ -219,9 +226,21 @@ function Hero() {
             >
 
             <button className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
-                Sign Up Now
+                Secure Your Legacy
               </button>
             </ScrollLink>
+
+            <ScrollLink
+            to="benifit"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            >
+            <button className="bg-transparent border px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 font-sans">
+                Benefits
+              </button>
+              </ScrollLink>
+
              
             </div>
           </header>
@@ -261,7 +280,15 @@ function Hero() {
             nominees.
           </p>
         </div>
-
+        <div className="mt-2 h-12 w-32 bg-blue-500 text-lg text-white rounded-lg hover:bg-blue-600">
+        <ScrollLink
+            to="subscription"
+            smooth={true}
+            duration={500}
+            offset={-50}
+            > <button className="mt-2">Get Started</button></ScrollLink>
+         
+        </div>
         {/* Images Section */}
 
         <div className="w-full max-w-9xl bg-[#F5F5F5]">
